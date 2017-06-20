@@ -1,0 +1,41 @@
+// Read collection
+GET http://localhost:7000/movies
+
+###
+
+// Read single
+GET http://localhost:7000/movies/59489a535370db09ac4e8ea7
+
+###
+
+// Read single - test error
+GET http://localhost:7000/movies/DOES_NOT_EXIST
+
+###
+
+// Create single
+POST http://localhost:7000/movies
+Content-Type: application/json
+
+{
+    "title": "Robocop",
+    "yearReleased": 1987,
+    "description": "In a dystopic and crime-ridden Detroit, a terminally wounded cop returns to the force as a powerful cyborg haunted by submerged memories."
+}
+
+###
+
+// Update single
+PUT http://localhost:7000/movies/594908e16c6e7318321d80ab
+Content-Type: application/json
+
+{
+    "title": "Robocop",
+    "yearReleased": 1987,
+    "description": "Yay! I updated the description!"
+}
+
+###
+
+// Delete single
+DELETE http://localhost:7000/movies/594908e16c6e7318321d80ab
